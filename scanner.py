@@ -16,7 +16,7 @@ print(f"tempo de inicio: {str(datetime.now())}")
 print("-" * 50)
 
 try:
-    for port in range(50,85):
+    for port in range(1,6535):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         socket.setdefaulttimeout(1) # tempo de tentativa de conexão
         result = s.connect_ex((target,port))
@@ -24,7 +24,7 @@ try:
             print(f"port {port} is open.")
         s.close()
 
-except KeyboardInterrupt
+except KeyboardInterrupt:
     print("\nInterrompendo execução...")
     sys.exit()
 
